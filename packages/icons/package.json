@@ -1,0 +1,54 @@
+{
+    "name": "@power-vue/icons",
+    "version": "1.0.0",
+    "description": "PowerVue icons",
+    "author": "Borys Żmuda <rudashi@gmail.com>",
+    "type": "module",
+    "homepage": "https://github.com/rudashi/power-vue#readme",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rudashi/power-vue.git",
+        "directory": "packages/icons"
+    },
+    "bugs": {
+        "url": "https://github.com/rudashi/power-vue/issues"
+    },
+    "main": "./src/index.ts",
+    "module": "./src/index.ts",
+    "types": "./src/index.d.ts",
+    "exports": {
+        ".": "./src/index.ts",
+        "./*": "./src/*.ts"
+    },
+    "publishConfig": {
+        "main": "./index.mjs",
+        "module": "./index.mjs",
+        "types": "./index.d.ts",
+        "exports": {
+            ".": {
+                "types": "./index.d.ts",
+                "import": "./index.mjs",
+                "default": "./index.mjs"
+            },
+            "./*": {
+                "types": "./*/index.d.ts",
+                "import": "./*/index.mjs",
+                "default": "./*/index.mjs"
+            }
+        },
+        "directory": "dist",
+        "linkDirectory": false,
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "dev:link": "pnpm link --global && npm link"
+    },
+    "dependencies": {
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.0.0"
+    }
+}
