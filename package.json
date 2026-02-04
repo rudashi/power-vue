@@ -1,0 +1,47 @@
+{
+    "name": "@power-vue/monorepo",
+    "version": "1.0.0",
+    "author": "Borys Żmuda <rudashi@gmail.com>",
+    "type": "module",
+    "homepage": "https://github.com/rudashi/power-vue#readme",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rudashi/power-vue.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rudashi/power-vue/issues"
+    },
+    "scripts": {
+        "setup": "pnpm run clean && pnpm run init",
+        "clean": "npx rimraf --glob **/node_modules **/dist **/.nuxt ./pnpm-lock.yaml",
+        "init": "pnpm install",
+        "link": "pnpm --filter './packages/*' dev:link",
+        "dev": "pnpm --filter example dev",
+        "hot:dev": "DEV_ENV=hot pnpm --filter example dev",
+        "build": "pnpm -r build:packages",
+        "build:packages": "pnpm run build:core && pnpm run build:lib && pnpm run build:themes && pnpm run build:icons",
+        "build:core": "pnpm --filter core build",
+        "build:lib": "pnpm --filter power-vue build",
+        "build:themes": "pnpm --filter themes build",
+        "build:icons": "pnpm --filter icons build",
+        "lint": "eslint ."
+    },
+    "devDependencies": {
+        "@types/node": "^20.10",
+        "@typescript-eslint/eslint-plugin": "^8.53",
+        "@typescript-eslint/parser": "^8.53",
+        "eslint": "^9.39",
+        "eslint-plugin-vue": "^10.7",
+        "@eslint/js":  "^9.39",
+        "typescript-eslint":  "^8.53",
+        "pnpm": "^10.28",
+        "typescript": "catalog:",
+        "vue": "catalog:",
+        "vue-tsc": "catalog:"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.0.0"
+    }
+}
