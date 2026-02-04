@@ -1,0 +1,32 @@
+{
+    "name": "example",
+    "version": "1.0.0",
+    "description": "PowerVue example app",
+    "author": "Borys Żmuda <rudashi@gmail.com>",
+    "type": "module",
+    "homepage": "https://github.com/rudashi/power-vue#readme",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rudashi/power-vue.git",
+        "directory": "app"
+    },
+    "bugs": {
+        "url": "https://github.com/rudashi/power-vue/issues"
+    },
+    "scripts": {
+        "dev": "vite dev"
+    },
+    "dependencies": {
+        "power-vue": "workspace:*",
+        "vue": "catalog:"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "catalog:",
+        "vite": "catalog:"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.0.0"
+    }
+}
