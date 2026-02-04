@@ -1,0 +1,66 @@
+{
+    "name": "power-vue",
+    "version": "1.0.0",
+    "description": "PowerVue is an open source UI library for Vue.",
+    "author": "Borys Żmuda <rudashi@gmail.com>",
+    "type": "module",
+    "homepage": "https://github.com/rudashi/power-vue#readme",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rudashi/power-vue.git",
+        "directory": "packages/powervue"
+    },
+    "bugs": {
+        "url": "https://github.com/rudashi/power-vue/issues"
+    },
+    "keywords": [
+        "vue",
+        "vue3",
+        "vue.js",
+        "ui library",
+        "component library"
+    ],
+    "main": "./src/index.ts",
+    "module": "./src/index.ts",
+    "types": "./src/index.d.ts",
+    "exports": {
+        ".": "./src/index.ts",
+        "./composables": "./src/composables/index.ts",
+        "./locale": "./src/locale/index.ts",
+        "./themes": "./src/themes/index.ts",
+        "./utilities": "./src/utilities.ts",
+        "./*": "./src/*"
+    },
+    "publishConfig": {
+        "main": "./index.mjs",
+        "module": "./index.mjs",
+        "types": "./index.d.ts",
+        "exports": {
+            ".": {
+                "types": "./index.d.ts",
+                "import": "./index.mjs",
+                "default": "./index.mjs"
+            },
+            "./*": {
+                "types": "./*/index.d.ts",
+                "import": "./*/index.mjs",
+                "default": "./*/index.mjs"
+            }
+        },
+        "directory": "dist",
+        "linkDirectory": false,
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "dev:link": "pnpm link --global && npm link"
+    },
+    "dependencies": {
+        "@power-vue/icons": "workspace:*"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.0.0"
+    }
+}
