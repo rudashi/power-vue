@@ -1,4 +1,4 @@
-export { createPowerVue } from './framework'
-export { default } from './framework'
+export { createPowerVue, default } from './framework'
 
 export * from './composables'
+export * from './types'
