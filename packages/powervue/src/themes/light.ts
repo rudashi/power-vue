@@ -36,7 +36,7 @@ const theme: ThemeDefinition = {
         'theme-kbd': '#EEEEEE',
         'theme-on-kbd': '#000000',
         'theme-code': '#F5F5F5',
-        'theme-on-code': '#000000'
+        'theme-on-code': '#000000',
     },
 }
 

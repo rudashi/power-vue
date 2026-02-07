@@ -10,4 +10,4 @@ createApp(App)
             messages: { pl },
         },
     }))
-    .mount("#app")
+    .mount('#app')

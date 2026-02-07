@@ -54,13 +54,11 @@ export const useIcon = (alias: IconAlias): IconInstance => {
     }
     return {
         component: icons.sets[icons.defaultSet].component,
-        icon: icon,
+        icon,
     }
 }
 
-export const SvgIcon: IconComponent = (props) => {
-    return () => h(props.tag ?? 'svg', { class: 'icon' }, props.icon)
-}
+export const SvgIcon: IconComponent = props => () => h(props.tag ?? 'svg', { class: 'icon' }, props.icon)
 
 export const createIcons = (options?: IconOptions): InternalIconOptions => {
     const sets = genDefaults()

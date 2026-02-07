@@ -61,7 +61,7 @@ export type ThemeInstance = {
 const parseOptions = (options?: ThemeOptions): InternalThemeOptions => {
     const defaults: InternalThemeOptions = {
         defaultTheme: 'dark',
-        prefix: 'p',
+        prefix: 'aura',
         themes: {
             light,
             dark,
@@ -88,7 +88,7 @@ export function createTheme(options?: ThemeOptions): ThemeInstance {
 
     const change = (theme: string): void => {
         if (!Object.keys(themes.value).includes(theme)) {
-            return console.warn(`Theme "${theme}" not found in the PowerVue instance.`)
+            throw new Error(`Theme "${theme}" not found in the PowerVue instance.`)
         }
 
         name.value = theme
