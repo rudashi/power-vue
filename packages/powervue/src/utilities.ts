@@ -1,4 +1,4 @@
-const isPlainObject = (value: any): value is Record<string, any> => {
+const isPlainObject = (value: unknown): value is Record<string, unknown> => {
     if (value === null || typeof value !== 'object') {
         return false
     }
@@ -6,6 +6,20 @@ const isPlainObject = (value: any): value is Record<string, any> => {
     const proto = Object.getPrototypeOf(value)
 
     return proto === Object.prototype || proto === null
+}
+
+export const convertToPx = (value: string | number | null | undefined): string | undefined => {
+    if (value === null || value === '' || value === undefined) {
+        return undefined
+    }
+
+    const num = Number(value)
+
+    if (isNaN(num)) {
+        return String(value)
+    }
+
+    return `${value}px`
 }
 
 export const mergeDeep = <T>(base: T, patch?: Partial<T>): T => {
@@ -17,14 +31,14 @@ export const mergeDeep = <T>(base: T, patch?: Partial<T>): T => {
         return patch as T
     }
 
-    const out: Record<string, any> = { ...(base as Record<string, any>) }
+    const out: Record<string, unknown> = { ...(base as Record<string, unknown>) }
 
-    for (const key of Object.keys(patch as Record<string, any>)) {
+    for (const key of Object.keys(patch as Record<string, unknown>)) {
         if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
             continue
         }
 
-        const patchVal = (patch as Record<string, any>)[key]
+        const patchVal = (patch as Record<string, unknown>)[key]
         const baseVal = out[key]
 
         if (isPlainObject(baseVal) && isPlainObject(patchVal)) {
