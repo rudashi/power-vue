@@ -22,12 +22,13 @@
         "paths": {
             "@power-vue/icons": [
                 "./packages/icons/src/index.ts"
+            ],
+            "@power-vue/icons/*": [
+                "./packages/icons/src/*"
+            ],
+            "power-vue/*": [
+                "./packages/powervue/src/*"
             ]
         }
-    },
-    "references": [
-        {
-            "path": "./packages/icons"
-        }
-    ]
+    }
 }

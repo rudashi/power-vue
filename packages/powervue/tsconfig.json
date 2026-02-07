@@ -20,8 +20,6 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
-        "composite": true,
-        "incremental": true,
         "baseUrl": ".",
         "paths": {
             "power-vue/*": [
@@ -36,10 +34,5 @@
     "exclude": [
         "node_modules",
         "dist"
-    ],
-    "references": [
-        {
-            "path": "../icons"
-        }
     ]
 }
