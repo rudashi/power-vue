@@ -30,6 +30,7 @@
         "./locale": "./src/locale/index.ts",
         "./themes": "./src/themes/index.ts",
         "./utilities": "./src/utilities.ts",
+        "./components/VisionGrid": "./src/components/VisionGrid/index.ts",
         "./*": "./src/*"
     },
     "publishConfig": {
