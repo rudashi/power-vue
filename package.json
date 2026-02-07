@@ -25,7 +25,8 @@
         "build:lib": "pnpm --filter power-vue build",
         "build:themes": "pnpm --filter themes build",
         "build:icons": "pnpm --filter icons build",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "check": "tsc --noEmit"
     },
     "devDependencies": {
         "@types/node": "^20.10",
