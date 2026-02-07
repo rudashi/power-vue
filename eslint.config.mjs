@@ -101,6 +101,13 @@ export default [
                 ],
                 alphabetical: true,
             }],
+            'vue/html-indent': ['error', 4],
+        },
+    },
+    {
+        files: ['packages/icons/**/*.{js,ts,mjs}'],
+        rules: {
+            'max-len': 'off',
         },
     },
 ]
